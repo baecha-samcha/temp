@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light dark;
+  --sky-top: #a0ddff;
+  --sky-bottom: #e8f6ff;
+  --midnight-top: #0b1b35;
+  --midnight-bottom: #0e2a4f;
+  --ice: #d5f3ff;
+  --ice-shadow: #a5d7f5;
+  --penguin: #0f141f;
+  --penguin-belly: #f8f9fa;
+  --fish: #ffa552;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom));
+  color: #0b1b35;
+  display: grid;
+  place-items: center;
+}
+
+body.dark {
+  background: linear-gradient(180deg, var(--midnight-top), var(--midnight-bottom));
+  color: #eaf3ff;
+}
+
+.page {
+  width: min(100%, 1100px);
+  padding: 1.5rem 1.25rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.game-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+.message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem;
+  transition: opacity 200ms ease;
+}
+
+.message.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.action {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.82);
+  color: #0b1b35;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 120ms ease, background 200ms ease;
+}
+
+.action:hover,
+.action:focus-visible {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Penguin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hud">
+      <h1 class="title">Super Penguin</h1>
+      <div class="stats">
+        <div>Score: <span id="score">0</span></div>
+        <div>Fish: <span id="fish">0</span></div>
+        <div>Best: <span id="best">0</span></div>
+      </div>
+    </header>
+    <section class="game-wrap">
+      <canvas id="game" width="960" height="540" aria-label="Super Penguin game canvas"></canvas>
+      <article id="message" class="message hidden" role="status"></article>
+      <button id="action" class="action" type="button">Tap or press Space to jump. Press ↓ to dive faster. Press R to restart.</button>
+    </section>
+  </main>
+  <script type="module" src="scripts/game.js"></script>
+</body>
+</html>
